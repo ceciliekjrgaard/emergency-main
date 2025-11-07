@@ -13,9 +13,10 @@ main {
 main > *:not(:first-child) {
   margin: 0 1rem;
 }
+
 main {
   grid-template-rows: min-content min-content 1fr min-content;
-}
+
 #instruction main {
   grid-template-rows: min-content min-content min-content 1fr min-content;
 }

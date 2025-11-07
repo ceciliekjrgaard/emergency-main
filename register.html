@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/burger.css" />
     <link rel="stylesheet" href="css/cards.css" />
-    <link rel="stylesheet" href="css/form.css" />
+    <link rel="stylesheet" href="css/forms.css" />
     <link rel="icon" type="image/png" href="img/fav.png" />
     <title>Emergency Site</title>
   </head>
@@ -34,22 +34,172 @@
     </header>
 
     <main>
-      <h1>INDBERET</h1>
-      <section id="form-section">
-        <article id="form-info">
-          <h2>Overskrift</h2>
-          <p>Tekst</p>
-        </article>
-        <form id="webform"></form>
-      </section>
-      <section id="form-summary">
-        <h2>Summary</h2>
-        <article>
-          <p class="placeholder">Opsummering</p>
-        </article>
-      </section>
+      <h1>Indberet dit problem her</h1>
+      <div class="intro-text">
+        <p>Her kan du indberette, hvis du er punkteret på cyklen – så kan vi registrere stedet og evt. hjælpe med reparation eller vejledning.</p>
+      </div>
+
+      <div class="form-grid">
+        <form class="form-section">
+          <div class="form-group">
+            <label for="first_name">Fornavn</label>
+            <input type="text" id="first_name" name="first_name" aria-describedby="fname-error" required />
+            <p class="error-message" id="fname-error">Please enter a value</p>
+          </div>
+
+          <div class="form-group">
+            <label for="last_name">Efternavn</label>
+            <input type="text" id="last_name" name="last_name" aria-describedby="lname-error" required />
+            <p class="error-message" id="lname-error">Please enter a value</p>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" aria-describedby="email-error" required />
+            <p class="error-message" id="email-error">Please enter a value</p>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <p id="password-instruction">Minimum 8 tegn</p>
+            <input type="password" id="password" name="password" aria-describedby="password-instruction password-error" required />
+            <p class="error-message" id="password-error">Please enter a value</p>
+          </div>
+
+          <div class="form-group">
+            <label for="accept_terms">
+              <input type="checkbox" id="accept_terms" name="accept_terms" value="yes" aria-describedby="terms-error" required />
+              Accept terms
+            </label>
+            <p class="error-message" id="terms-error">Please tick the box</p>
+          </div>
+        </form>
+
+        <section class="output">
+          <h2>Opsamling (output)</h2>
+          <div>
+            <p>First name: <span id="first_name_output"></span></p>
+            <p>Last name: <span id="last_name_output"></span></p>
+            <p>Email: <span id="email_output"></span></p>
+            <p>Password: <span id="password_output"></span></p>
+            <p>Favourite Languages: <span id="lang_output"></span></p>
+            <p>Terms accepted: <span id="terms_output"></span></p>
+          </div>
+        </section>
+        <button>Sign up</button>
+      </div>
+      <label for="Hjælp">Hvordan ønsker du at få fikset din cykel?</label>
+      <p>Her kan du indberette, hvis du er punkteret på cyklen – så kan vi registrere stedet og evt. hjælpe med reparation eller vejledning.</p>
+      <!--<form aria-label="EK signup form"></form> -->
+      <form>
+        <section id="form-section">
+          <div class="dropdown-box">
+            <div class="dropdown">
+              <button class="dropdown-btn">Få hjælp til punkteret cykel? ▼</button>
+              <div class="dropdown-content">
+                <p>Vejledning</p>
+                <p>Cykelværksted</p>
+                <p>Support</p>
+              </div>
+            </div>
+          </div>
+
+          <form id="webform"></form>
+          <label for="first_name">Hvor befinder du dig?</label>
+          <input type="text" id="location" placeholder="Fx Nørrebrogade 45, København" required />
+          <p class="error-message">Udfylds venligst din lokation</p>
+
+          <label for="last_name">Cykelmodel</label>
+          <input type="text" id="location" placeholder="Fx Kildemoes" required />
+          <p class="error-message">Udfylds venligst din cykelmodel</p>
+
+          <label for="email">Hvor mange tommer er dit dæk?</label>
+          <input type="text" id="location" placeholder="Fx 28 tommer" required />
+          <p class="error-message">Udfyld venligst tommer</p>
+
+          <label for="Lokation">Ønsker du at booke tid hos nærmeste cykelværksted?</label>
+
+          <form>
+            <fieldset>
+              <label>
+                <input type="radio" name="punkteret" value="ja" />
+                Ja
+              </label>
+              <label>
+                <input type="radio" name="punkteret" value="nej" />
+                Nej
+              </label>
+            </fieldset>
+          </form>
+        </section>
+
+        <label for="terms">
+          <input type="checkbox" id="terms" name="accept_terms" value="yes" />
+          Accept terms
+        </label>
+
+        <button>Kontakt</button>
+      </form>
     </main>
     <footer>
+      <!--
+    <h1>Få hjælp til punktering</h1>
+  
+    <form id="punctureForm">
+      <label for="location">Hvor skete punkteringen?</label>
+      <input type="text" id="location" placeholder="Fx Nørrebrogade 45, København" required />
+  
+      <label for="wheel">Hvilket hjul er punkteret?</label>
+      <select id="wheel" required>
+        <option value="">Vælg...</option>
+        <option value="forhjul">Forhjul</option>
+        <option value="baghjul">Baghjul</option>
+        <option value="begge">Begge hjul</option>
+        <option value="usikker">Jeg er ikke sikker</option>
+      </select>
+  
+      <label for="cause">Hvordan skete punkteringen?</label>
+      <select id="cause" required>
+        <option value="">Vælg...</option>
+        <option value="glas">Kørte over glas</option>
+        <option value="søm">Kørte over søm</option>
+        <option value="kantsten">Ramte kantsten</option>
+        <option value="ukendt">Ved ikke</option>
+      </select>
+  
+      <label for="help">Har du brug for hjælp nu?</label>
+      <select id="help" required>
+        <option value="">Vælg...</option>
+        <option value="nej">Nej, jeg klarer det selv</option>
+        <option value="ja">Ja, jeg har brug for hjælp</option>
+      </select>
+  
+      <div id="helpOptions" class="hidden">
+        <label for="assistType">Hvilken type hjælp har du brug for?</label>
+        <select id="assistType">
+          <option value="">Vælg...</option>
+          <option value="vejledning">Vejledning i at lappe dækket</option>
+          <option value="værksted">Find nærmeste cykelværksted</option>
+          <option value="transport">Transport af cykel</option>
+        </select>
+      </div>
+  
+      <label for="desc">Beskriv kort situationen</label>
+      <textarea id="desc" rows="4" placeholder="Fx: Punktering i regnvejr, bagdæk fladt efter 1 km..."></textarea>
+  
+      <button type="submit">Indsend</button>
+    </form>
+  
+    
+    <div id="result" class="hidden result"></div>
+  </main>
+  
+  <script>
+    const helpSelect = document.getElementById("help");
+    const helpOptions = document.getElementById("helpOptions");
+    const form = document.getElementById("punctureForm");
+    const result = document.getElementById("result");
+  -->
       <nav class="some">
         <ul>
           <li><a href="">link</a></li>
@@ -76,6 +226,7 @@
       </nav>
     </footer>
     <script src="js/burger.js"></script>
+
     <!-- <script src="js/main.js"></script> -->
   </body>
 </html>
