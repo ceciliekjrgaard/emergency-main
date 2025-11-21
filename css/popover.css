@@ -1,0 +1,48 @@
+[popover] {
+  padding: 1rem;
+  max-width: 50ch;
+  max-height: 50ch;
+  margin: auto;
+  line-height: 1.5;
+}
+
+::backdrop {
+  background: #0008;
+}
+
+:popover-open {
+  display: grid;
+}
+
+@starting-style {
+  :popover-open {
+    opacity: 0;
+    rotate: 360deg;
+    transition: 0.5s allow-discrete;
+  }
+}
+p {
+  margin: 1em;
+  padding: 1em;
+  max-width: 30ch;
+}
+/*
+ul {
+  margin: 2em;
+  padding: 2em;
+  max-width: 40ch;
+}
+  */
+
+ol {
+  margin: 1em;
+  padding: 1em;
+  max-width: 30ch;
+}
+
+/*
+:popover-open {
+  opacity: 1;
+  rotate: none;
+}
+  */

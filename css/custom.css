@@ -1,10 +1,9 @@
 :root {
   /* Colours */
-  --color-bg: #fceb94; /* page background /*
-
+  --color-bg: light-dark(#fceb94, #76746a); /* page background /*
   /* Header */
-  --color-head-bg: #ff4b00;
-  border-radius: 10px;
+  --color-head-bg: light-dark(#ff4b00, #50321eb4);
+  --border-radius: 10px;
 
   /* Logotype */
   --color-logotype-bg: #000000;
@@ -29,7 +28,7 @@
 
   /* Tekst */
   --color-text: #000;
-  --color-text-inverted: #cdccc4;
+  --color-text-inverted: #fff;
 
   /*  Marginer */
   --margin-head-bottom: 5px;
@@ -38,8 +37,9 @@
   --border-radius: 5px;
 
   /* Cards */
-  --color-card-bg: #8a8585;
-  --color-cta-card-bg: #d5d2d0;
+  --color-card-bg: light-dark(#fff, #b0b0b0);
+  --color-cta-card-bg: light-dark(#ff4b00;, #b24700);
+
   /* news-cards */
   --color-news-bg: #dbdad4;
   --color-news-bg-inverted: #585a5e;
@@ -67,4 +67,28 @@
   --color-info-bg: #676161;
   --color-infobox-1-bg: #cfcec6;
   --color-infobox-2-bg: #969995;
+}
+/* CSS Starter er tilføjet */
+
+html {
+  /*
+  --color-heading: light-dark(#b24700, #e0d3ff); /* dark: #e0d3ff */
+  --color-text: light-dark(#555, #cdc7dc); /* dark: #cdc7dc */
+  --color-bg: light-dark(#fff, #222); /* dark: #222 */
+  color: var(--color-text);
+  background-color: var(--color-bg);
+
+  color-scheme: light;
+}
+html.dark {
+  color-scheme: dark;
+}
+
+#toggle {
+  padding: 0.4rem 1rem;
+  background-color: var(--color-head-bg);
+  color: black;
+  text-decoration: none;
+  width: max-content;
+  border-radius: 10px;
 }
