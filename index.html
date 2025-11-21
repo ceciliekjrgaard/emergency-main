@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/burger.css" />
     <link rel="stylesheet" href="css/cards.css" />
+    <link rel="stylesheet" href="css/popover.css" />
     <link rel="icon" type="image/png" href="img/fav.png" />
     <title>Emergency Site</title>
   </head>
@@ -18,11 +19,12 @@
     <header>
       <nav>
         <div id="logotype-wrapper" class="logo">
-          <a href="index.html"> LOGO-TYPE </a>
+          <a href="index.html"> Punctured </a>
         </div>
         <ul class="menu">
           <li><a class="menuItem" href="instruction.html">Nærkontakt </a></li>
           <li><a class="menuItem" href="register.html">Indberet</a></li>
+          <button id="toggle">Darkmode</button>
         </ul>
         <button class="burger">
           <span class="line"></span>
@@ -31,60 +33,114 @@
         </button>
       </nav>
     </header>
-    <section id="main-disclamer">
-      <div id="main-disclamer-content">
-        <img src="warning" alt="ICON" />
-        <div>
-          <h1>OVERSKRIFT</h1>
-          <p class="sub">Underrubrik</p>
-        </div>
-      </div>
-    </section>
     <main>
-      <section id="daily">
-        <article class="daily_card">
-          <img src="" alt="teaser_img" />
-          <div class="daily_text">
-            <h2>Teaser</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
-              magnam ducimus ea, sed minima asperiores.
-            </p>
-            <a href="" class="cta_btn">Se mere</a>
+      <div class="layout-wrapper">
+        <section id="main-disclamer">
+          <img src="img/dæk.webp" alt="ICON" class="img1" />
+          <div>
+            <h1>NYT DÆK?</h1>
+            <p>FÅ HJÆLP TIL AT BLIVE GODT KØRENDE IGEN.</p>
           </div>
-        </article>
-        <article class="daily_card">
-          <img src="" alt="teaser_img" />
-          <div class="daily_text">
-            <h2>Teaser</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
-              magnam ducimus ea, sed minima asperiores.
-            </p>
-            <a href="" class="cta_btn">Se mere</a>
-          </div>
-        </article>
-      </section>
-      <section id="breaking">
-        <article class="news_card">
-          <h3>Nyhed</h3>
-          <p>Lorem ipsum dolor sit, sed minima asperiores.</p>
-          <img src="" alt="news_img" />
-          <a class="cta_btn" href="">Læs mere</a>
-        </article>
-        <article class="news_card">
-          <h3>Nyhed</h3>
-          <p>Lorem ipsum dolor sit, sed minima asperiores.</p>
-          <img src="" alt="news_img" />
-          <a class="cta_btn" href="">Læs mere</a>
-        </article>
-        <article class="news_card">
-          <h3>Nyhed</h3>
-          <p>Lorem ipsum dolor sit, sed minima asperiores.</p>
-          <img src="" alt="news_img" />
-          <a class="cta_btn" href="">Læs mere</a>
-        </article>
-      </section>
+        </section>
+        <section id="daily">
+          <article class="daily_card">
+            <img src="img/cykel.webp" alt="teaser_img" />
+            <div class="daily_text">
+              <h2>Kend din cykel</h2>
+              <p>Lær din cykel bedre at kende.</p>
+              <a href="instruction.html" class="cta_btn">Lær at kende her</a>
+            </div>
+          </article>
+          <article class="daily_card">
+            <img src="img/formular.webp" alt="teaser_img" />
+            <div class="daily_text">
+              <h2>Kontakt os her</h2>
+              <p>Står du med en punkteret cykel og ved ikke hvordan du får det fikset? Udfyld formularen og lad os hjælpe dig tilbage på jernhesten!</p>
+              <a href="register.html" class="cta_btn">Udfyld kontakt formular</a>
+            </div>
+          </article>
+        </section>
+
+        <section id="Guide">
+          <article class="news_card">
+            <h2>Læserbrev</h2>
+            <p>En våd og punkteret morgen</p>
+            <img src="/img/punkteret.webp" alt="news_img" />
+            <button class="cta_btn" popovertarget="news_popover1">Læs mere</button>
+            <div popover id="news_popover1">
+              <h4>En våd og punkteret morgen</h4>
+              <time class="newsDate">13. APRIL 2025 – KL. 07:14</time>
+              <p>
+                Tirsdag morgen startede som enhver anden – med kaffe i hånden og cykelhjelmen spændt. Men da jeg trillede ud i regnvejret på vej mod studiet, mærkede jeg hurtigt, at noget var galt. Baghjulet føltes tungt, og da jeg kiggede ned, var
+                det tydeligt: punktering. Midt på brostenene, med regnen silende ned, stod jeg og stirrede på et fladt dæk og en lang vej foran mig. Der var ingen cykelhandler i nærheden, og jeg havde ikke tid til at vente på hjælp. Så jeg gjorde det
+                eneste mulige – jeg slæbte cyklen med mig. I regnjakke og våde sko traskede jeg gennem byen, mens vandet samlede sig i hælene og humøret sank. Det føltes som en evighed, og da jeg endelig nåede frem, var jeg både gennemblødt og
+                forsinket. Det slog mig, hvor sårbar man er, når cyklen svigter – især i et land hvor vi er afhængige af den hver dag. Måske er det på tide, at vi får flere offentlige reparationsstationer eller bedre adgang til nødservice. For en
+                punktering bør ikke ødelægge en hel dag.
+              </p>
+              <button popovertarget="news_popover1">Luk</button>
+            </div>
+          </article>
+        </section>
+
+        <section id="Guide til reperation af cykeldæk">
+          <article class="news_card">
+            <img src="img/repair.webp" width="10" alt="news_img" />
+            <button class="cta_btn" popovertarget="news_popover2">Læs mere</button>
+            <div popover id="news_popover2">
+              <h4>Guide</h4>
+              <p>Udstyr du skal bruge:</p>
+              <nav>
+                <ol>
+                  <li>Dækjern (2 stk)</li>
+                  <li>Lappegrej (lapper, sandpapir, lim)</li>
+                  <li>Cykelpumpe</li>
+                  <li>Vandskål eller sæbevand</li>
+                  <li>Markeringspen (valgfrit)</li>
+                  <li>Eventuelt en ny slange, hvis den gamle er for beskadiget</li>
+                </ol>
+              </nav>
+
+              <h3>Sådan gør du:</h3>
+              <nav>
+                <ol>
+                  <li>Tag hjulet af cyklen Hvis det er baghjulet, skal du måske løsne kæden. Læg cyklen på hovedet for nem adgang.</li>
+                  <li>Fjern dækket fra fælgen Brug dækjernene til forsigtigt at lirke dækket af. Start ét sted og arbejd dig rundt.</li>
+                  <li>Tag slangen ud Når dækket er løsnet, træk slangen ud og pust lidt luft i den.</li>
+                  <li>Find hullet Dyp slangen i vand eller brug sæbevand – bobler viser hvor hullet er. Marker stedet.</li>
+                  <li>Forbered og lap hullet Tør området og brug sandpapir til at gøre det ru. Påfør lim og vent 1 minut. Tryk lappen fast og hold den i 1-2 minutter.</li>
+                  <li>Tjek lappen Pust slangen op og tjek for luftlækage. Hvis alt er tæt, er du klar.</li>
+                  <li>Monter slangen og dækket igen Læg slangen tilbage i dækket, og brug dækjernene til at få dækket på plads. Pust op til korrekt tryk.</li>
+                  <li>Sæt hjulet på cyklen Sørg for at kæden og bremser sidder korrekt.</li>
+                  <li>Med lidt øvelse kan du klare det på 15–20 minutter. Det sparer både tid og penge – og du slipper for at slæbe cyklen i regnvejr!</li>
+                </ol>
+              </nav>
+              <button popovertarget="news_popover2">Luk</button>
+            </div>
+          </article>
+        </section>
+        <section id="Stort udvalg af cykeludstyr">
+          <article class="news_card">
+            <img src="img/salg.webp" alt="Udstyr" />
+            <button class="cta_btn" popovertarget="news_popover3">Find dit udstyr her</button>
+            <h3>Udstyr</h3>
+            <p>Find dit udstyr her, så du nemt kan komme op på cyklen igen.</p>
+            <div popover id="news_popover3">
+              <nav>
+                <h3>Klar til alle cykeldage – med det rigtige udstyr!</h3>
+                <p>
+                  Uanset om du pendler til studiet, cruiser gennem byen eller tager på weekendtur, er det rigtige cykeludstyr nøglen til en god oplevelse. Hos os finder du alt, hvad du har brug for – samlet ét sted. Vi ved, at cyklen er mere end bare
+                  transport. Den er frihed, bevægelse og bæredygtighed. Men friheden kræver forberedelse. Derfor har vi samlet et udvalg af praktisk, slidstærkt og stilfuldt cykeludstyr, der gør din hverdag lettere – og din cykeltur sjovere. Værktøj
+                  og reparationssæt – så du aldrig står alene med en punktering. Regnjakker og reflekser – fordi vejret ikke skal stoppe dig. 💡 Lygter og hjelme – for sikkerhed og synlighed, dag og nat. Pumper, dækjern og lapper – til tasken, skuret
+                  eller studiet. Alt vores udstyr er testet af cyklister – til cyklister. Vi går op i kvalitet, funktion og design, og vi hjælper dig gerne med at finde det, der passer til netop din cykel og dine behov. Og ja – vi har også
+                  startpakker til nye cyklister, så du kommer godt i gang uden at glemme det vigtigste. Kom forbi butikken, eller besøg os online. Vi har åbent alle ugens dage, og vi står klar med råd, vejledning og gode tilbud. Cyklen er din ven –
+                  udstyret er din sikkerhed. Gør din næste tur bedre med det rigtige gear.
+                </p>
+              </nav>
+              <button popovertarget="news_popover3">Luk</button>
+            </div>
+          </article>
+        </section>
+      </div>
     </main>
 
     <footer>
@@ -114,6 +170,6 @@
       </nav>
     </footer>
     <script src="js/burger.js"></script>
-    <!-- <script src="js/main.js"></script> -->
+    <script src="js/main.js"></script>
   </body>
 </html>

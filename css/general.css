@@ -7,22 +7,28 @@ html {
 header {
   height: min-content;
 }
-
 #main-disclamer {
-  height: 225px;
+  height: 160px;
   background-color: var(--color-head-bg);
   display: flex;
-  justify-content: flex-start;
+  grid-column: 1 / span 2;
   align-items: center;
   padding-left: 2rem;
   padding-bottom: 2%;
-  margin-bottom: var(--margin-head-bottom);
+}
+.layout-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
 }
 
+/*
 #main-disclamer-content {
   display: flex;
   column-gap: 1rem;
 }
+  */
 
 main section {
   padding: 20px;
@@ -30,9 +36,9 @@ main section {
 }
 
 h1 {
-  font-size: var(--font-h1-size);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text-inverted);
+  font-size: 2em;
+  font: weight 5px;
+  color: white;
   margin: 10 px;
   line-height: 1.3rem;
   text-align: center;
@@ -53,11 +59,15 @@ h1 {
   line-height: 1.5rem;
 }
 
+/*
 .sub {
   font-size: var(--font-sub1-size);
   font-weight: var(--font-weight-light);
   color: var(--color-text-inverted);
+  margin: 0em;
+  padding: 1em;
 }
+  */
 
 h2 {
   font-size: var(--headline2-size);
@@ -134,4 +144,16 @@ nav a:active {
 /* FOOTER */
 footer a {
   font-size: 0.7rem;
+}
+.img1 {
+  width: 150px;
+}
+#book:hover {
+  filter: brightness(200%);
+}
+#wheel:hover {
+  filter: brightness(200%);
+}
+#rain:hover {
+  filter: brightness(200%);
 }

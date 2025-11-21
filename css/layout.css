@@ -6,16 +6,20 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
+
 main {
   display: grid;
+  grid-template-columns: 1fr 1fr;
   row-gap: 1rem;
 }
+
 main > *:not(:first-child) {
   margin: 0 1rem;
 }
 
 main {
   grid-template-rows: min-content min-content 1fr min-content;
+}
 
 #instruction main {
   grid-template-rows: min-content min-content min-content 1fr min-content;
@@ -63,7 +67,7 @@ footer ul {
 
 @media (width > 600px) {
   #frontpage > main {
-    grid-template-columns: 6fr 3fr;
+    grid-template-columns: 3fr;
     grid-template-rows: auto 1fr auto;
   }
   #instruction > main,
@@ -82,4 +86,18 @@ footer ul {
   footer {
     grid-template-columns: 1fr 1fr 1fr;
   }
+  /*
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1rem;
+  }
+  main > *:not(:first-child) {
+    margin: 0 1rem;
+  }
+
+  main {
+    grid-template-rows: min-content min-content 1fr min-content;
+  }
+    */
 }
